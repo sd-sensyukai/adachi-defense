@@ -17,6 +17,22 @@
   <link rel="stylesheet" href="style.css">
 
 </head>
+<script>
+  const toggle = document.querySelector(".nav-toggle");
+  const navlinks = document.querySelector(".navlinks");
+
+  toggle.addEventListener("click", () => {
+    navlinks.classList.toggle("active");
+  });
+
+  // メニュー内リンクを押したら閉じる
+  document.querySelectorAll(".navlinks a").forEach(link => {
+    link.addEventListener("click", () => {
+      navlinks.classList.remove("active");
+    });
+  });
+</script>
+
 <body>
 
   <!-- ヒーロー -->
@@ -28,7 +44,7 @@
   </header>
 
   <!-- ナビ -->
-  <nav class="topnav" aria-label="Primary">
+  <!--<nav class="topnav" aria-label="Primary">
     <div class="navwrap">
       <div class="navlogo"></div>
       <div class="navlinks">
@@ -41,7 +57,23 @@
         <a href="#access">アクセス</a>
       </div>
     </div>
-  </nav>
+  </nav>-->
+  
+  <nav>
+	  <div class="wrap nav-container">
+		<!-- 左上ハンバーガーボタン -->
+		<button class="nav-toggle">☰</button>
+		<h1 class="logo">足立セルフディフェンス</h1>
+		<ul class="navlinks">
+		  <li><a href="#about">当道場について</a></li>
+		  <li><a href="#instructor">指導者紹介</a></li>
+		  <li><a href="#schedule">スケジュール</a></li>
+		  <li><a href="#access">アクセス</a></li>
+		  <li><a href="#contact">お問い合わせ</a></li>
+		</ul>
+	  </div>
+	</nav>
+
 
 <!-- 特徴 -->
 <section id="features">
