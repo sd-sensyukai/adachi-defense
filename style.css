@@ -549,6 +549,13 @@ img, video, iframe {
     aspect-ratio: 3/2;
   }
 }
+.image-row img {
+  width: 100%;
+  max-width: 400px; /* 好きな最大サイズ */
+  height: auto;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
 
 /* ============================= */
 /* ナビゲーション */
@@ -646,4 +653,16 @@ img {
   height: auto;
   display: block;
   margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .image-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .image-row img {
+    width: 30%;
+    margin-bottom: 0;
+  }
 }
