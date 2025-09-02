@@ -412,10 +412,43 @@ footer a {
 @media (max-width: 768px) { #trial iframe { height: 750px; } }
 @media (max-width: 480px) { #trial iframe { height: 650px; } }
 
-.image-row { display: flex; justify-content: center; gap: 16px; margin-top: 20px; max-width: 900px; margin-left: auto; margin-right: auto; }
-.image-row img { width: 32%; height: 200px; object-fit: cover; object-position: center; border-radius: 8px; display: block; }
+/* 稽古風景画像調整 */
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-@media (max-width: 640px) { .image-row { flex-direction: column; max-width: 100%; } .image-row img { width: 100%; height: 220px; } }
+.image-row img {
+  flex: 1 1 100%;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  max-width: 400px; /* PCはこれで横並びの最大幅 */
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* スマホ用縦並び対応 */
+@media (max-width: 640px) {
+  .image-row {
+    flex-direction: column; /* 縦並び */
+    align-items: center;    /* 中央寄せ */
+    gap: 16px;
+  }
+
+  .image-row img {
+    width: 90%;   /* 画面幅より少し余白を入れる */
+    max-width: none; /* 最大幅制限解除 */
+    height: auto; /* 高さ自動 */
+  }
+}
+
 
 /* 修正 基本調整（途切れ防止） */
 .wrap { max-width: 1200px; margin: auto; padding: 0 16px; box-sizing: border-box; }
