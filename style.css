@@ -61,7 +61,8 @@ header.hero video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  pointer-events: none;
+  /*pointer-events: none;*/
+  z-index: 0;
 }
 
 header.hero-image {
@@ -69,7 +70,6 @@ header.hero-image {
   position: absolute;
   inset: 0;
   background: url('https://sd-sensyukai.github.io/adachi-defense/headerjpg.jpg') center center / cover no-repeat;
-
   z-index: 0;
 }
 
