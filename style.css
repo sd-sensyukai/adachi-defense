@@ -69,7 +69,10 @@ img {
   display: none;
   position: absolute;
   inset: 0;
-  background: url('https://sd-sensyukai.github.io/adachi-defense/headerjpg.jpg') center center / cover no-repeat;
+  background-image: url('https://sd-sensyukai.github.io/adachi-defense/headerjpg.jpg');
+  background-position: center top; /* 上寄せで重要部分を見せる */
+  background-size: cover;         /* 全体を覆う */
+  background-repeat: no-repeat;
   z-index: 0;
 }
 
@@ -104,6 +107,13 @@ img {
   }
   .hero-image {
     display: block !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  header.hero {
+    height: 100vh; /* 画面高さに合わせる */
+    min-height: auto;
   }
 }
 
