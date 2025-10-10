@@ -68,7 +68,8 @@ header.hero-image {
   display: none;
   position: absolute;
   inset: 0;
-  background: url('headerjpg.jpg') center center / cover no-repeat;
+  background: url('https://sd-sensyukai.github.io/adachi-defense/headerjpg.jpg') center center / cover no-repeat;
+
   z-index: 0;
 }
 
