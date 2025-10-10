@@ -44,8 +44,13 @@ img {
 header.hero {
   position: relative;
   height: 70vh;
-  min-height: 360px;
+  min-height: 400px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
 }
 
 header.hero video {
@@ -57,6 +62,48 @@ header.hero video {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
+}
+
+header.hero-image {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: url('headerjpg.jpg') center center / cover no-repeat;
+  z-index: 0;
+}
+
+/* テキストエリア */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 30px;
+  border-radius: 12px;
+}
+
+/* CTAボタン */
+.cta-btn {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.cta-btn:hover {
+  background-color: #e85a00;
+  transform: scale(1.05);
+}
+
+/* --- スマホでは動画を消して静止画を表示 --- */
+@media (max-width: 768px) {
+  .hero-video {
+    display: none;
+  }
+  .hero-image {
+    display: block;
+  }
 }
 
 .visually-hidden {
@@ -281,7 +328,7 @@ footer a {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  aspect-ratio: 16 / 9; 
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 8px 22px rgba(0,0,0,0.12);
@@ -309,7 +356,7 @@ footer a {
 }
 
 .step-circle {
-  background: #e63946; 
+  background: #e63946;
   color: #fff;
   font-weight: bold;
   font-size: 1.2rem;
@@ -393,8 +440,19 @@ footer a {
 }
 
 #news, #trial { padding: 80px 18px; }
-#trial { background-color: #dcdcdc; padding: 80px 18px; border-radius: 12px; text-align: center; }
-#trial .btn { background: #ff6600; color: #fff; font-size: 1.2rem; padding: 16px 24px; transition: transform 0.2s ease; }
+#trial {
+  background-color: #dcdcdc;
+  padding: 80px 18px;
+  border-radius: 12px;
+  text-align: center;
+}
+#trial .btn {
+  background: #ff6600;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 16px 24px;
+  transition: transform 0.2s ease;
+}
 #trial .btn:hover { transform: scale(1.05); }
 #trial .wrap { background-color:#ffffff; }
 #news .wrap { background-color:#ffffff; }
@@ -405,7 +463,15 @@ footer a {
 .class-image { margin: 30px 0; text-align: center; }
 .class-image img { max-width: 100%; height: auto; border-radius: 12px; }
 
-.pricing-image { width: 100%; max-width: 1200px; height: auto; display: block; margin: 20px auto 0 auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.pricing-image {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  margin: 20px auto 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
 @media (max-width: 960px) { .pricing-image { max-width: 90%; margin-top: 16px; } }
 @media (max-width: 640px) { .pricing-image { max-width: 95%; margin-top: 12px; } }
@@ -448,7 +514,6 @@ footer a {
     height: auto; /* 高さ自動 */
   }
 }
-
 
 /* 修正 基本調整（途切れ防止） */
 .wrap { max-width: 1200px; margin: auto; padding: 0 16px; box-sizing: border-box; }

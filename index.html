@@ -14,6 +14,93 @@
 <meta property="og:image" content="https://example.com/ogp.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://adachi-selfdefense.jp/#business",
+      "name": "足立セルフディフェンス",
+      "image": "https://adachi-selfdefense.jp/images/dojo.jpg",
+      "url": "https://adachi-selfdefense.jp/",
+      "telephone": "03-1234-5678",
+      "priceRange": "¥¥",
+      "description": "足立区鹿浜の空手ベース護身術教室。運動不足解消・護身・ストレス発散に最適。オンライン参加も可能です。",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "東京都足立区鹿浜7-26 小宮第一ハイツ101",
+        "addressLocality": "足立区",
+        "addressRegion": "東京都",
+        "postalCode": "123-0864",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.7783,
+        "longitude": 139.7567
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Monday",
+          "opens": "20:00",
+          "closes": "21:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "16:30",
+          "closes": "18:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/adachi_selfdefense",
+        "https://www.facebook.com/adachi_selfdefense"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://adachi-selfdefense.jp/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "まったくの初心者でも大丈夫ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、運動未経験の方でも大歓迎です。体の使い方や基本の動作から丁寧に指導します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ケガなどが心配なのですが、安全ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "安全第一の指導を徹底しています。スパーリングは希望制で、対人練習も強度を調整できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "オンラインでも参加できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、Zoomを使用したオンライン稽古も開催しています。自宅で安心して学べます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "体験参加はどうすれば良いですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "公式サイトの『体験申し込み』フォームから簡単にご予約いただけます。初回は無料です。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 </head>
 <body>
 <!-- ヒーロー -->
@@ -21,7 +108,17 @@
 <video autoplay muted loop playsinline poster="header-fallback.jpg">
 <source src="head.mp4" type="video/mp4">
 </video>
+
+<!-- スマホでのみ表示される静止画 -->
+<div class="hero-image"></div>
+
 <h1 class="visually-hidden">オンラインで学べる護身術教室｜足立セルフディフェンス</h1>
+<!-- ヘッダー中央のコンテンツ -->
+  <div class="hero-content">
+    <h1>足立セルフディフェンス</h1>
+    <p>初心者9割！体験だけでもOK!!</p>
+    <a href="#trial" class="btn cta-btn">体験申込はこちら</a>
+  </div>
 </header>
 
 <!-- ナビ -->
@@ -175,7 +272,7 @@
     <a href="https://www.facebook.com/share/1A62HBoebU/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
     Facebook
     </a>
-    </li>
+</li>
 </ul>
 </div>
 </section>
