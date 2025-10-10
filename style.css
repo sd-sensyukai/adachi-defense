@@ -96,13 +96,13 @@ header.hero-image {
   transform: scale(1.05);
 }
 
-/* --- スマホでは動画を消して静止画を表示 --- */
-@media (max-width: 768px) {
+/* スマホでは動画OFF・画像ON */
+@media screen and (max-width: 1024px) {
   .hero-video {
-    display: none;
+    display: none !important;
   }
   .hero-image {
-    display: block;
+    display: block !important;
   }
 }
 
