@@ -2,60 +2,82 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>体験レッスン申し込み｜足立会セルフディフェンス</title>
-<link rel="stylesheet" href="style.css"> <!-- 既存サイトCSSを読み込む -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>体験レッスン申し込み｜足立セルフディフェンス</title>
+<meta name="description" content="足立セルフディフェンスの体験レッスン申し込みフォーム。オンライン・道場どちらも体験可能です。">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ナビ -->
-<nav class="topnav" aria-label="Primary">
-  <div class="navwrap">
-    <div class="navlogo">足立会セルフディフェンス</div>
-    <div class="navlinks">
-      <a href="index.html#features">特徴</a>
-      <a href="index.html#class">クラス内容</a>
-      <a href="index.html#instructor">指導者紹介</a>
-      <a href="index.html#news">お知らせ</a>
-      <a href="index.html#access">アクセス</a>
-    </div>
+<nav class="site-nav" aria-label="メインナビゲーション">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">足立セルフディフェンス</a>
+    <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">☰</button>
+    <ul class="navlinks">
+      <li><a href="index.html#features">特徴</a></li>
+      <li><a href="index.html#class">クラス内容</a></li>
+      <li><a href="index.html#pricing">料金</a></li>
+      <li><a href="index.html#instructor">指導者</a></li>
+      <li><a href="index.html#access">アクセス</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
   </div>
 </nav>
 
-<!-- 体験申し込みセクション -->
-<section id="trial">
+<div class="page-hero">
+  <h1>体験レッスン申し込み</h1>
+  <p>オンライン・道場、どちらも体験可能です</p>
+</div>
+
+<main class="page-main">
   <div class="wrap">
-    <h1>体験レッスン申し込み</h1>
-    <p class="lead">オンライン・道場、どちらも体験可能です。お一人ずつ丁寧に対応します。</p>
+    <p class="lead">お一人ずつ丁寧に対応します。下記フォームよりお申し込みください。</p>
 
-    <!-- Googleフォーム埋め込み -->
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSeN_wsXIDJybusx_OF85OpoBulPlNgLoSbzkKjq_5GodGH_FQ/viewform?usp=dialog" 
-      width="100%" 
-      height="900" 
-      frameborder="0" 
-      marginheight="0" 
-      marginwidth="0">
-      読み込んでいます…
-    </iframe>
+    <div class="trial-form-wrap">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeN_wsXIDJybusx_OF85OpoBulPlNgLoSbzkKjq_5GodGH_FQ/viewform?usp=dialog"
+        title="体験申し込みフォーム"
+        loading="lazy">
+        読み込んでいます…
+      </iframe>
+    </div>
 
-    <p style="margin-top:16px; font-size:0.9rem; color:var(--muted);">
+    <p class="form-note">
       ※送信後、2日以内にご返信いたします。迷惑メール設定により届かない場合があります。
     </p>
 
-    <p style="margin-top:12px;">
-      <a href="index.html" style="color:var(--accent); text-decoration:underline;">ホームに戻る</a>
+    <p class="form-back">
+      <a href="index.html" class="back-link">← ホームに戻る</a>
     </p>
   </div>
-</section>
+</main>
 
-<!-- フッター -->
 <footer>
   <div class="wrap">
-    <p>&copy; 2025 足立会セルフディフェンス</p>
-    <p><a href="#privacy">プライバシーポリシー</a></p>
+    <p>&copy; 2025 足立セルフディフェンス</p>
+    <p><a href="privacy.html">プライバシーポリシー</a></p>
   </div>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.querySelector(".nav-toggle");
+  const navlinks = document.querySelector(".navlinks");
+
+  toggle.addEventListener("click", () => {
+    const open = navlinks.classList.toggle("active");
+    toggle.setAttribute("aria-expanded", open);
+    toggle.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
+  });
+
+  document.querySelectorAll(".navlinks a").forEach(link => {
+    link.addEventListener("click", () => {
+      navlinks.classList.remove("active");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+});
+</script>
 
 </body>
 </html>
