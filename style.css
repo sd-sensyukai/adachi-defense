@@ -165,7 +165,7 @@ p.lead {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 640px;
+  max-width: 800px;
   min-height: 300px;
   margin: 0 auto;
   padding: 0 24px;
@@ -197,15 +197,26 @@ p.lead {
 
 .hero-audience-accent {
   color: var(--yellow);
+  font-size: 1.2em;
 }
 
-.hero-logo {
-  display: block;
-  width: clamp(220px, 55vw, 360px);
-  height: auto;
-  margin: 0 auto;
-  border-radius: var(--radius);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+.hero-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.hero-logo-inline {
+  width: clamp(48px, 12vw, 80px);
+  height: clamp(48px, 12vw, 80px);
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .hero-content {
@@ -213,12 +224,14 @@ p.lead {
 }
 
 .hero-content h1 {
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(1.35rem, 4.2vw, 3.2rem);
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.2;
-  margin-bottom: 12px;
+  margin-bottom: 0;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .hero-tagline {
@@ -248,6 +261,16 @@ p.lead {
 
   .hero-rotator {
     min-height: 280px;
+    padding: 0 16px;
+  }
+
+  .hero-slide {
+    left: 16px;
+    right: 16px;
+  }
+
+  .hero-title-row {
+    gap: 10px;
   }
 }
 
