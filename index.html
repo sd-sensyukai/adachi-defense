@@ -80,16 +80,22 @@
 <body>
 
 <header class="hero" id="home">
-  <video class="hero-video" autoplay muted loop playsinline poster="header-fallback.jpg">
-    <source src="head2.mp4" type="video/mp4">
-  </video>
-  <div class="hero-image" aria-hidden="true"></div>
-  <div class="hero-content">
-    <p class="visually-hidden">オンラインで学べる護身術教室｜足立セルフディフェンス</p>
-    <span class="hero-badge">初心者9割・体験歓迎</span>
-    <h1>足立セルフディフェンス</h1>
-    <p class="hero-tagline">シナリオ別の護身術で、使える技術を体に刻む</p>
-    <a href="trial.html" class="btn cta-btn">体験申込はこちら</a>
+  <div class="hero-rotator" aria-live="polite">
+    <div class="hero-slide is-active">
+      <div class="hero-content">
+        <p class="visually-hidden">オンラインで学べる護身術教室｜足立セルフディフェンス</p>
+        <span class="hero-badge">初心者9割・体験歓迎</span>
+        <h1>足立セルフディフェンス</h1>
+        <p class="hero-tagline">シナリオ別の護身術で、使える技術を体に刻む</p>
+        <a href="trial.html" class="btn cta-btn">体験申込はこちら</a>
+      </div>
+    </div>
+    <div class="hero-slide">
+      <p class="hero-audience-large"><span class="hero-audience-accent">30代から50代</span>の運動不足に悩む人のための道場</p>
+    </div>
+    <div class="hero-slide">
+      <img src="top_image.jpg" alt="足立セルフディフェンス" class="hero-logo" width="500" height="500">
+    </div>
   </div>
 </header>
 
@@ -377,6 +383,18 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!isActive) item.classList.add("active");
     });
   });
+
+  const heroRotator = document.querySelector(".hero-rotator");
+  if (heroRotator && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const heroSlides = heroRotator.querySelectorAll(".hero-slide");
+    let heroIndex = 0;
+
+    setInterval(() => {
+      heroSlides[heroIndex].classList.remove("is-active");
+      heroIndex = (heroIndex + 1) % heroSlides.length;
+      heroSlides[heroIndex].classList.add("is-active");
+    }, 5000);
+  }
 });
 </script>
 
